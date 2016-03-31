@@ -1,32 +1,11 @@
 import Ember from 'ember';
 
-//moved to database (by rentals.json upload)
-// var rentals = [{
-//   id: 1,
-//   owner: "Veruca Salt",
-//   city: "San Francisco",
-//   type: "Estate",
-//   bedrooms: 15,
-//   image: "https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg"
-// }, {
-//   id: 2,
-//   owner: "Mike TV",
-//   city: "Seattle",
-//   type: "Condo",
-//   bedrooms: 1,
-//   image: "https://upload.wikimedia.org/wikipedia/commons/0/0e/Alfonso_13_Highrise_Tegucigalpa.jpg"
-// }, {
-//   id: 3,
-//   owner: "Violet Beauregarde",
-//   city: "Portland",
-//   type: "Apartment",
-//   bedrooms: 3,
-//   image: "https://upload.wikimedia.org/wikipedia/commons/f/f7/Wheeldon_Apartment_Building_-_Portland_Oregon.jpg"
-// }];
-
 export default Ember.Route.extend({
   model() {
-    return this.store.findAll('rental');
+  return Ember.RSVP.hash({
+    cities: this.store.findAll('city'),
+    rentals: this.store.findAll('rental')
+    });
   },
 
   actions: {
@@ -36,19 +15,41 @@ export default Ember.Route.extend({
       this.transitionTo('index');
     },
 
-    update(rental, params) {
-      Object.keys(params).forEach(function(key) {
-        if(params[key]!==undefined) {
-          rental.set(key,params[key]);
-        }
-      });
-      rental.save();
-      this.transitionTo('index');
-    },
-
-    destroyRental(rental) {
-      rental.destroyRecord();
+    saveCity(params) {
+      var newCity = this.store.createRecord('city', params);
+      newCity.save();
       this.transitionTo('index');
     }
+    // ,
+    //
+    // update(rental, params) {
+    //   Object.keys(params).forEach(function(key) {
+    //     if(params[key]!==undefined) {
+    //       rental.set(key,params[key]);
+    //     }
+    //   });
+    //   rental.save();
+    //   this.transitionTo('index');
+    // },
+    //
+    // destroyRental(rental) {
+    //   rental.destroyRecord();
+    //   this.transitionTo('index');
+    // },
+    //
+    // update(city, params) {
+    //   Object.keys(params).forEach(function(key) {
+    //     if(params[key]!==undefined) {
+    //       city.set(key,params[key]);
+    //     }
+    //   });
+    //   city.save();
+    //   this.transitionTo('index');
+    // },
+    //
+    // destroyCity(city) {
+    //   city.destroyRecord();
+    //   this.transitionTo('index');
+    // }
   }
 });

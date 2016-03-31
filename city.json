@@ -1,0 +1,29 @@
+{ "cities": [{
+  "name": "Portland",
+  "country": "USA"
+  },
+  {
+    "name": "Seattle",
+    "country": "USA"
+  },
+  {
+    "name": "Paris",
+    "country": "France"
+  },
+  {
+    "name": "Frankfort",
+    "country": "Germany"
+  },
+  {
+    "name": "Llindesfall",
+    "country": "Wales"
+  },
+  {
+    "name": "London",
+    "country": "England"
+  },
+  {
+    "name": "Denver",
+    "country": "USA"
+    }]
+}

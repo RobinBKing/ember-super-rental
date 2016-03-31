@@ -1,8 +1,6 @@
-Located in {{rental.city}}, this {{rental.bedrooms}} bedroom {{rental.type}} is
+Located in {{rental.city.name}}, this {{rental.bedrooms}} bedroom {{rental.type}} is
 available by arrangement through {{rental.owner}}.
 <br>
 <p><img src={{rental.image}} alt={{rental.type}}></p>
 
-<button {{action 'delete' rental}}>Delete</button><br>
-{{#link-to 'index'}}Return to Main page{{/link-to}} <br>
-{{#link-to 'contact'}}Click here to contact us.{{/link-to}}
+<button {{action 'delete' rental}}>Delete</button>
