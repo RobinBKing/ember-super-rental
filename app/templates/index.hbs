@@ -6,7 +6,7 @@ We hope you find exactly what you're looking for in a place to stay.
 
 <ul>
   {{#each model.rentals as |rental|}}
-    {{rental-tile rental=rental}}
+    {{rental-tile rental=rental}} {{rental-cost rental}}
   {{/each}}
 </ul>
 
@@ -22,6 +22,3 @@ We hope you find exactly what you're looking for in a place to stay.
 {{new-city saveCity2="saveCity3"}}
 
 <hr>
-
-{{#link-to 'about'}}About{{/link-to}}
-{{#link-to 'contact'}}Click here to contact us.{{/link-to}}
