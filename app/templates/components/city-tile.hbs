@@ -1,9 +1,6 @@
-<p>{{city.name}}'s Details</p>
-<p>Country: {{city.country}}</p>
+<h4>Location: {{fullLocation}}</h4>
 
-<hr>
-
-<p>Rentals available in {{city.name}}:</p>
+<h3>Rentals available in {{city.name}}:</h3>
 <ul>
   {{#each city.rentals as |rental|}}
     <li>{{rental.owner}}'s {{rental.type}} with {{rental.bedrooms}} rooms
