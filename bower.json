@@ -7,5 +7,20 @@
     "ember-qunit-notifications": "0.1.0",
     "firebase": "^2.1.0",
     "bootstrap": "~3.3.5"
-  }
+  },
+  "homepage": "https://github.com/RobinBKing/ember-super-rental",
+  "authors": [
+    "rob"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
 }

@@ -7,13 +7,13 @@ export default Ember.Component.extend({
       this.set('addNewCity', true);
     },
 
-    saveCity() {
+    saveCity1() {
       var params = {
         name: this.get('name'),
         country: this.get('country'),
       };
       this.set('addNewCity', false);
-      this.sendAction('saveCity', params);
+      this.sendAction('saveCity2', params);
     }
   }
 });
